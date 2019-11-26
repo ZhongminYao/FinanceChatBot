@@ -6,7 +6,7 @@ Authdb='FinanceChatBot'
 
 
 def constructor():
-    client = MongoClient("mongodb://dickyao98:<Win19980714!>@financechatbot-shard-00-00-q2kn9.mongodb.net:27017,financechatbot-shard-00-01-q2kn9.mongodb.net:27017,financechatbot-shard-00-02-q2kn9.mongodb.net:27017/test?ssl=true&replicaSet=FinanceChatBot-shard-0&authSource=admin&retryWrites=true&w=majority")
+    client = MongoClient("mongodb://dickyao98:Win19980714!@financechatbot-shard-00-00-q2kn9.mongodb.net:27017,financechatbot-shard-00-01-q2kn9.mongodb.net:27017,financechatbot-shard-00-02-q2kn9.mongodb.net:27017/test?ssl=true&replicaSet=FinanceChatBot-shard-0&authSource=admin&retryWrites=true&w=majority")
     db = client[Authdb]
     return db
    
