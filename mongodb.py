@@ -13,7 +13,7 @@ def constructor():
 
 def write_user_stock_fountion(stock, bs, price):  
     db=constructor()
-    collect = db['mystock']
+    collect = db['StockDB']
     collect.insert({"stock": stock,
                     "data": 'care_stock',
                     "bs": bs,
@@ -24,15 +24,14 @@ def write_user_stock_fountion(stock, bs, price):
 
 def delete_user_stock_fountion(stock):  
     db=constructor()
-    collect = db['mystock']
+    collect = db['StockDB']
     collect.remove({"stock": stock})
     
 
 def show_user_stock_fountion():  
     db=constructor()
-    collect = db['mystock']
+    collect = db['StockDB']
     cel=list(collect.find({"data": 'care_stock'}))
-
     return cel
 
 
