@@ -1,9 +1,8 @@
-
 from pymongo import MongoClient
 import urllib.parse
 import datetime
 
-Authdb='資料庫名稱'
+Authdb='FinanceChatBot'
 
 
 def constructor():
