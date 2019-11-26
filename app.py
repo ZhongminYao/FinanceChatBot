@@ -35,6 +35,7 @@ def handle_message(event):
     profile = line_bot_api.get_profile(event.source.user_id)
     uid = profile.user_id 
     usespeak=str(event.message.text) 
+    line_bot_api.reply_message(event.reply_token,usespeak)
     if re.match('[0-9]{4}[<>][0-9]',usespeak): 
         mongodb.write_user_stock_fountion(stock=usespeak[0:4], bs=usespeak[4:5], price=usespeak[5:])
         line_bot_api.push_message(uid, TextSendMessage(usespeak[0:4]+'successfully saved!'))
@@ -46,8 +47,5 @@ def handle_message(event):
         line_bot_api.push_message(uid, TextSendMessage(usespeak+'successfully deleted!'))
         return 0
 
-
-import os
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
